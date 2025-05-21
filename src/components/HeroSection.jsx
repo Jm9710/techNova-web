@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/logo-tech-nova.png';
 
 const HeroSection = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // Activa la animación después de montar el componente
+    setVisible(true);
+  }, []);
+
   return (
     <section
       className="text-white d-flex align-items-center justify-content-center"
@@ -12,8 +19,7 @@ const HeroSection = () => {
         fontFamily: "'Source Code Pro', monospace",
       }}
     >
-      <div className="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-5 px-4">
-        {/* Texto limitado y centrado */}
+      <div className={`container d-flex flex-column flex-md-row align-items-center justify-content-center gap-5 px-4 ${visible ? 'fade-in' : 'fade-out'}`}>
         <div className="text-center text-md-start" style={{ maxWidth: '600px' }}>
           <h1 className="mb-4">¡Creamos tu web!</h1>
           <p className="lead">
@@ -27,7 +33,6 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Imagen centrada con margen a la izquierda */}
         <div className="text-center ms-md-5">
           <img
             src={logo}
