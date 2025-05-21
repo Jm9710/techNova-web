@@ -21,6 +21,7 @@ const ContactForm = () => {
       } else {
         setStatus('ERROR');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setStatus('ERROR');
     }
