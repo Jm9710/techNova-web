@@ -1,1 +1,0 @@
-# techNova-web
